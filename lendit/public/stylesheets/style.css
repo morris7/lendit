@@ -1,0 +1,55 @@
+#lendit .navbar-inverse .navbar-brand{
+  color: #fff;
+}
+
+#lendit .navbar-inverse .navbar-nav>li>a{
+  color: #fff;
+}
+
+#lendit .navbar-inverse, .navbar-inverse .navbar-nav>.active>a {
+  background-image: -webkit-linear-gradient(top, #4ED236 0, #79d25d 100%);
+  background-image: -o-linear-gradient(top, #4ED236 0, #79d25d 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
+  background-image: linear-gradient(to bottom, #4ED236 0, #79d25d 100%);
+}
+
+#lendit .navbar-inverse {
+  background-color: transparent;
+  border:0;
+}
+
+#lendit .navbar-inverse .navbar-nav>.active>a:hover{
+  background-color: #000;
+}
+
+#home-main {
+  margin-top:100px;
+}
+
+#lendit .btn-primary {
+  background-color: #4ED236;
+  border-color: #79d25d;
+}
+
+#lendit .btn-primary:hover {
+  background-color: #79d25d;
+  border-color: #4ED236;
+}
+
+#lendit .panel-primary>.panel-heading{
+  background-color: #4ED236;
+  border-color: #4ED236;
+}
+
+#lendit .panel-primary{
+  border-color: #79d25d;
+}
+
+nav .navbar-brand {
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
+}
+
+#lendit .lobster {
+  font-family: 'Lobster', cursive;
+}

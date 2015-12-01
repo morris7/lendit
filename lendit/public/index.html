@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LendIt</title>
+
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Lobster&subset=all" rel="stylesheet" />
+</head>
+<body id="lendit">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">LendIt!</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="/lend">Lend</a></li>
+                    <li><a href="/borrow">Borrow</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#login">Log in</a></li>
+                    <li class="active"><a href="./">Username<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="home-main">
+            <div class="jumbotron">
+                <h1>Welcome to <span class="lobster">LendIt!</span></h1>
+                <p>Now you can share anything with anyone! Just join our community of fellow LendIt!ers and get LendIt!ing. Just click below to find out more about our exciting, green community.</p>
+                <p>
+                    <a class="btn btn-lg btn-primary" href="#" role="button">Find out more »</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Why LendIt!?</h3>
+                    </div>
+                    <div class="panel-body">
+                        We started up to help people re-use things. Everyday things, luxury things, every...thing.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

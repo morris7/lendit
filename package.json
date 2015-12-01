@@ -1,0 +1,24 @@
+{
+  "name": "lendit",
+  "version": "1.0.0",
+  "description": "lendit app",
+  "main": "lendit.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-generator": "^4.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morris7/lendit.git"
+  },
+  "author": "sam morris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morris7/lendit/issues"
+  },
+  "homepage": "https://github.com/morris7/lendit#readme"
+}
