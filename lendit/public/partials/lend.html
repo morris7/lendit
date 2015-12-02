@@ -1,0 +1,13 @@
+<h1>Lend</h1>
+<br />
+<form role="form" action="#" method="post" name="form">
+    <div class="form-group">
+        <label>I want to lend my:</label>
+        <input class="form-control" type="text" ng-model="item.name" name="itemname" id="itemname" />
+        <br />
+        <label>Cost per day (£):</label>
+        <input class="form-control" type="text" ng-model="item.price" name="itemprice" id="itemprice" />
+        <br />
+        <button type="button" ng-click="createItem(item)" class="btn btn-lg btn-primary">LendIt!</button>
+    </div>
+</form>

@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>LendIt</title>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script type="text/javascript" src="javascripts/controllers/app.js"></script>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="stylesheets/style.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=all" rel="stylesheet" />
 </head>
-<body id="lendit">
+<body ng-app="app" id="lendit">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -23,9 +28,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="/lend">Lend</a></li>
-                    <li><a href="/borrow">Borrow</a></li>
+                    <li class="active"><a href="/#home">Home</a></li>
+                    <li><a href="/#lend">Lend</a></li>
+                    <li><a href="/#borrow">Borrow</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -47,33 +52,10 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div id="home-main">
-            <div class="jumbotron">
-                <h1>Welcome to <span class="lobster">LendIt!</span></h1>
-                <p>Now you can share anything with anyone! Just join our community of fellow LendIt!ers and get LendIt!ing. Just click below to find out more about our exciting, green community.</p>
-                <p>
-                    <a class="btn btn-lg btn-primary" href="#" role="button">Find out more »</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Why LendIt!?</h3>
-                    </div>
-                    <div class="panel-body">
-                        We started up to help people re-use things. Everyday things, luxury things, every...thing.
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <div id="mainContainer" class="container" ng-controller="ctrl" >
+        <ng-view></ng-view>
     </div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

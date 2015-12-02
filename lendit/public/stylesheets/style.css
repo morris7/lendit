@@ -22,10 +22,6 @@
   background-color: #000;
 }
 
-#home-main {
-  margin-top:100px;
-}
-
 #lendit .btn-primary {
   background-color: #4ED236;
   border-color: #79d25d;
@@ -52,4 +48,12 @@ nav .navbar-brand {
 
 #lendit .lobster {
   font-family: 'Lobster', cursive;
+}
+
+.green{
+  color: #79d25d;
+}
+
+#lendit #mainContainer{
+  margin-top: 100px;
 }
