@@ -8,7 +8,10 @@
     <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-    <script type="text/javascript" src="javascripts/controllers/app.js"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
+    <script type="text/javascript" src="javascripts/controllers/homeController.js"></script>
+    <script type="text/javascript" src="javascripts/controllers/lendController.js"></script>
+    <script type="text/javascript" src="javascripts/controllers/borrowController.js"></script>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="stylesheets/style.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=all" rel="stylesheet" />
@@ -52,7 +55,7 @@
         </div>
     </nav>
 
-    <div id="mainContainer" class="container" ng-controller="ctrl" >
+    <div id="mainContainer" class="container" >
         <ng-view></ng-view>
     </div>
 
