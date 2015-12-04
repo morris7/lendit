@@ -33,7 +33,7 @@ app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, 
         $scope.onFileSelect($scope.files);
     });
     $scope.$watch('file', function () {
-        if ($scope.file != null) {
+        if ($scope.file !== null) {
             $scope.files = [$scope.file];
         }
     });
