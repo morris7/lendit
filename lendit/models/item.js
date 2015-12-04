@@ -8,5 +8,5 @@ var mongoose = require('mongoose');
 module.exports = mongoose.model('item', {
     name : String,
     price: Number,
-    path: String
+    path: [String]
 });

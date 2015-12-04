@@ -1,7 +1,7 @@
 <h1>Lend</h1>
 <br />
 <div clss="container">
-    <form role="form" action="#" method="post" name="form" ng-controller="lendController">
+    <form role="form" action="#" method="post" name="form">
         <div class="row">
             <div class="col-sm-4">
                 <div class="form-group">
@@ -30,12 +30,13 @@
                 </div>
             </div>
             <div class="col-sm-8">
+                <label ng-if="imageUploaded">Image preview</label>
                 <div class="uploadPreview">
-                    <label ng-if="imageUploaded">Image preview</label>
-                    <img data-src="holder.js/200x200" class="img-thumbnail" alt="200x200" ngf-src="!files[0].$error && files[0]"></img>
-                    <img data-src="holder.js/200x200" class="img-thumbnail" alt="200x200" ngf-src="picFile"></img>
+                    <img ng-repeat="f in files" data-src="holder.js/200x200" class="img-thumbnail" alt="200x200" ngf-src="!f.$error && f"></img>
                 </div>
+                <img data-src="holder.js/200x200" class="img-thumbnail" alt="200x200" ngf-src="picFile"></img>
             </div>
+
         </div>
     </form>
 

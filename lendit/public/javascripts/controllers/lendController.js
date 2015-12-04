@@ -7,9 +7,10 @@ app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, 
 
     $scope.imageUploaded = false;
     $scope.items = [];
+    $scope.paths = [];
 
     $scope.createItem = function(item) {
-        item.path = $scope.filename;
+        item.path = $scope.paths;
         $http.post('/api/item', item)
             .success(function(data) {
                 $scope.formReset(); // clear the form so our user is ready to enter another
@@ -29,14 +30,7 @@ app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, 
 
     };
 
-    $scope.$watch('files', function () {
-        $scope.onFileSelect($scope.files);
-    });
-    $scope.$watch('file', function () {
-        if ($scope.file !== null) {
-            $scope.files = [$scope.file];
-        }
-    });
+
 
     $scope.onFileSelect = function(image) {
         if (angular.isArray(image)) {
@@ -64,10 +58,21 @@ app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, 
             // If you need uploaded file immediately
             $scope.imageUploaded = true;
             $scope.filename = data.split('/').pop();
+            $scope.paths.push($scope.filename);
         }).error(function(err) {
             $scope.uploadInProgress = false;
             console.log('Error uploading file: ' + err.message || err);
         });
     };
+
+    $scope.$watch('files', function () {
+        $scope.onFileSelect($scope.files);
+    });
+
+    $scope.$watch('file', function () {
+        if ($scope.file !== null) {
+            $scope.files = [$scope.file];
+        }
+    });
 
 }]);

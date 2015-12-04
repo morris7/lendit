@@ -12,6 +12,19 @@ module.exports = function(app) {
     res.sendfile('./public/index.html');
   });
 
+  app.get('/api/item/:id', function (req, res) {
+
+    Item.find({_id: req.params.id},
+        function (err, item) {
+
+          // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+          if (err)
+            res.send(err)
+
+          res.json(item); // return all todos in JSON format
+    });
+  });
+
   // create lendit item and send back all items after creation
   app.post('/api/item', function (req, res) {
 
