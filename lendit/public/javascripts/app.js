@@ -1,7 +1,7 @@
 /**
  * Created by sam morris on 01/12/2015.
  */
-var app = angular.module('app', ['ngRoute']).directive('gridItem', function () {
+var app = angular.module('app', ['ngRoute','ngFileUpload']).directive('gridItem', function () {
     return {
         restrict: 'EA',
         templateUrl:'../directives/grid-item.html'

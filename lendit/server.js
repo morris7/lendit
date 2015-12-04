@@ -11,6 +11,7 @@ var users = require('./routes/users');
 
 var app = express();
 
+
 //connect to mongodb
 mongoose.connect(database.url);
 
@@ -25,9 +26,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public_uploads')));
 
 // routes
 require('./routes/item')(app);
+
+
 app.use('/users', users);
 
 // catch 404 and forward to error handler

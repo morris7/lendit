@@ -57,3 +57,19 @@ nav .navbar-brand {
 #lendit #mainContainer{
   margin-top: 100px;
 }
+
+.uploadPreview{
+  width: 300px;
+  height: 300px;
+}
+
+.drop-box{
+  width: 300px;
+  height: 80px;
+  border: 3px dashed #999;
+  padding: 25px;
+}
+
+.dragover {
+  border: 4px dashed #79d25d;
+}
