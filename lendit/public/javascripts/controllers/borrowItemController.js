@@ -12,4 +12,7 @@ app.controller('borrowItemController', ['$scope', '$http', '$location',
             console.log('Error: ' + data);
         });
 
+    $scope.myInterval = 3000;
+
+
 }]);

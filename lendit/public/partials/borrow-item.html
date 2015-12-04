@@ -1,4 +1,15 @@
 <div class="container">
     <h1>{{item.name}}</h1>
-    <item-image ng-repeat="path in item.path"></item-image>
+    <div id="slides_control">
+        <div>
+            <carousel interval="myInterval">
+                <slide ng-repeat="path in item.path" active="slide.active">
+                    <img ng-src="{{path}}">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index+1}}</h4>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
 </div>
