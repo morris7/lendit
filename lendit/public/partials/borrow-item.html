@@ -1,15 +1,27 @@
 <div class="container">
-    <h1>{{item.name}}</h1>
-    <div id="slides_control">
-        <div>
-            <carousel interval="myInterval">
-                <slide ng-repeat="path in item.path" active="slide.active">
-                    <img ng-src="{{path}}">
-                    <div class="carousel-caption">
-                        <h4>Slide {{$index+1}}</h4>
-                    </div>
-                </slide>
-            </carousel>
+    <div class="page-header">
+        <h1>{{item.name}} <span class="lobster">(£{{item.price}})</span></h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>{{item.description}}</p>
+            <br/>
+            <button class="btn btn-primary btn-lg">I want this!</button>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <div id="slides_control">
+                <div>
+                    <carousel interval="myInterval">
+                        <slide ng-repeat="path in item.paths" active="slide.active">
+                            <img ng-src="{{path}}">
+                            <div class="carousel-caption">
+                                <h4>Slide {{$index+1}}</h4>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+            </div>
         </div>
     </div>
 </div>

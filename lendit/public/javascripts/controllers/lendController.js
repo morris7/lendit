@@ -2,7 +2,8 @@ app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, 
 
     $scope.item = {
         name: '',
-        price: 0
+        price: 0,
+        description: ''
     };
 
     $scope.imageUploaded = false;
@@ -10,7 +11,7 @@ app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, 
     $scope.paths = [];
 
     $scope.createItem = function(item) {
-        item.path = $scope.paths;
+        item.paths = $scope.paths;
         $http.post('/api/item', item)
             .success(function(data) {
                 $scope.formReset(); // clear the form so our user is ready to enter another

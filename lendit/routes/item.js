@@ -19,7 +19,7 @@ module.exports = function(app) {
 
           // if there is an error retrieving, send the error. nothing after res.send(err) will execute
           if (err)
-            res.send(err)
+            res.send(err);
 
           res.json(item); // return all todos in JSON format
     });
@@ -32,7 +32,8 @@ module.exports = function(app) {
     Item.create({
       name: req.body.name,
       price: req.body.price,
-      path: req.body.path
+      paths: req.body.paths,
+      description: req.body.description
     }, function (err, item) {
       //console.log(req.body)
       if (err)
@@ -40,7 +41,7 @@ module.exports = function(app) {
       // get and return all the items after you create another
       Item.find(function (err, items) {
         if (err)
-          res.send(err)
+          res.send(err);
         res.json(items);
       });
     });
@@ -54,7 +55,7 @@ module.exports = function(app) {
 
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err)
-        res.send(err)
+        res.send(err);
 
       res.json(items); // return all items in JSON format
     });
@@ -95,4 +96,4 @@ module.exports = function(app) {
 
   });
 
-}
+};

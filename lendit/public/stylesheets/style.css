@@ -18,8 +18,8 @@
   border:0;
 }
 
-#lendit .navbar-inverse .navbar-nav>.active>a:hover{
-  background-color: #000;
+#lendit .navbar-inverse .navbar-nav>li:hover, #lendit .navbar-inverse .navbar-nav>.active:hover{
+  background-color: #333;
 }
 
 #lendit .btn-primary {
@@ -55,7 +55,7 @@ nav .navbar-brand {
 }
 
 #lendit #mainContainer{
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .uploadPreview img{
@@ -102,6 +102,28 @@ nav .navbar-brand {
 
 #lendit a.left.carousel-control{
   background-image: linear-gradient(to left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.2) 100%);
+}
+
+#lendit .carousel-inner img {
+  height: 500px;
+  width: 100%;
+}
+
+.lending-form textarea{
+  min-height: 150px;
+}
+
+.page-header{
+  text-transform: capitalize;
+  margin-top: 0px;
+}
+
+#home-main {
+  margin-top: 20px;
+}
+
+p.price{
+  font-size: 50px;
 }
 
 
