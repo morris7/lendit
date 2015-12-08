@@ -11,6 +11,13 @@ var app = angular.module('app', ['ngRoute','ngFileUpload','ui.bootstrap']).direc
         restrict: 'EA',
         templateUrl:'../directives/item-image.html'
     };
+}).directive("ngUsername", function () {
+    return {
+
+        restrict: 'AE',
+        template:'{{username}}'
+    };
+
 });
 
 app.config(function($locationProvider, $routeProvider) {
@@ -20,9 +27,18 @@ app.config(function($locationProvider, $routeProvider) {
         .when('/lend', { templateUrl: 'partials/lend.html', controller: 'lendController' })
         .when('/borrow', { templateUrl: 'partials/borrow.html', controller: 'borrowController' })
         .when('/borrow/:id', { templateUrl: 'partials/borrow-item.html', controller: 'borrowItemController' })
-        .when('/login', { templateUrl: 'partials/login.html', controller: 'borrowItemController'})
-        .when('/register', { templateUrl: 'partials/register.html', controller: 'borrowItemController'})
+        .when('/login', { templateUrl: 'partials/login.html', controller: 'loginController'})
+        .when('/logout', {controller: 'logoutController'})
+        .when('/register', { templateUrl: 'partials/register.html', controller: 'registerController'})
         .otherwise({redirectTo:'/'});
+});
+
+app.run(function ($rootScope, $location, $route, AuthService) {
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+        if (AuthService.isLoggedIn() === false) {
+            //$location.path('/login');
+        }
+    });
 });
 
 

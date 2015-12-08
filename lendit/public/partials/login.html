@@ -4,16 +4,22 @@
         <div class="page-header">
             <h1>Login</h1>
         </div>
-        <form role="form" action="/login" method="post" name="form">
+        <form role="form" ng-submit="login()" class="form">
             <div class="form-group login-form">
                 <label>Username</label>
-                <input class="form-control" type="text" ng-model="user.username" name="username" id="username" />
+                <input class="form-control" type="text" ng-model="loginForm.username" name="username" id="username" />
                 <br />
                 <label>Password</label>
-                <input class="form-control" type="password" ng-model="user.password" name="password" id="password" />
+                <input class="form-control" type="password" ng-model="loginForm.password" name="password" id="password" />
                 <br />
+                <div ng-if="status == 'fail'" class="alert alert-danger" role="alert">
+                    <strong>Oops!</strong> You've entered an incorrect username or password.
+                </div>
+                <div ng-if="status == 'loggedOut'" class="alert alert-success" role="alert">
+                    <strong>Successfully logged out!</strong>
+                </div>
                 <input type="submit" ng-click="" class="btn btn-lg btn-primary"/>
-                <a href="/register">click here to register</a>
+                <a href="/#/register">click here to register</a>
             </div>
         </form>
     </div>

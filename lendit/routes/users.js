@@ -16,11 +16,11 @@ module.exports = function(app) {
   app.post('/register', function (req, res) {
     Account.register(new Account({username: req.body.username}), req.body.password, function (err, account) {
       if (err) {
-        return res.render("register", {info: "Sorry. That username already exists. Try again."});
+        return res.status(500).json({err: err});
       }
 
       passport.authenticate('local')(req, res, function () {
-        res.redirect('/success');
+        return res.status(200).json({status: 'Registration successful!'});
       });
     });
   });
@@ -29,9 +29,31 @@ module.exports = function(app) {
     res.render('login.html', {user: req.user});
   });
 
-  app.post('/login',
-      passport.authenticate('local', { successRedirect: '/',
-        failureRedirect: '/login' }));
+  app.post('/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+      if (err) {
+        return res.status(500).json({err: err});
+      }
+      if (!user) {
+        return res.status(401).json({err: info});
+      }
+      req.logIn(user, function(err) {
+        if (err) {
+          return res.status(500).json({err: 'Could not log in user'});
+        }
+        res.status(200).json({status: 'Login successful!', username: user.username});
+      });
+    })(req, res, next);
+  });
+
+  app.get('/hello', function(req, res) {
+    if(req.user) {
+      res.status(200).json({username: req.user.username});
+    }else{
+      return res.status(500).json({err: err});
+    }
+  });
+
 
   app.get('/logout', function (req, res) {
     req.logout();

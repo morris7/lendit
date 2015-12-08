@@ -1,10 +1,39 @@
 <div id="home-main">
     <div class="jumbotron">
-        <h1>Welcome to <span class="lobster">LendIt!</span></h1>
-        <p>Now you can share anything with anyone! Just join our community of fellow LendIt!ers and get LendIt!ing. Just click below to find out more about our exciting, sharing, (and <span class="green">green</span>!) community.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="#" role="button">Find out more »</a>
-        </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>Welcome {{username}} to <span class="lobster">LendIt!</span></h1>
+                    <p>Now you can share anything with anyone! Just join our community of fellow LendIt!ers and get LendIt!ing. Just click below to find out more about our exciting, sharing, (and <span class="green">green</span>!) community.</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="#" role="button">Find out more »</a>
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Sign up today:</h3>
+                    <form role="form" class="form register" ng-submit="register()" ng-controller="registerController">
+                        <div class="form-group register-form">
+                            <div class="row registerTopRow">
+                                <div class="col-sm-6"><label>First name</label>
+                                    <input class="form-control" type="text" ng-model="registerForm.firstname" name="firstname" id="firstname" required/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Surname</label>
+                                    <input class="form-control" type="text" ng-model="registerForm.surname" name="surname" id="surname" required/>
+                                </div>
+                            </div>
+                            <label>Email</label>
+                            <input class="form-control" type="text" ng-model="registerForm.username" name="username" id="username" required/>
+                            <label>Password</label>
+                            <input class="form-control" type="password" ng-model="registerForm.password" name="password" id="password" required/>
+                            <br />
+                            <input type="submit" class="btn btn-lg btn-primary"/>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -44,7 +73,7 @@
     </div>
 </div>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<!--div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
@@ -69,7 +98,7 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
+</div-->
 
 <div class="page-header"></div>
 

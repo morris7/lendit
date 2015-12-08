@@ -4,15 +4,15 @@
         <div class="page-header">
             <h1>Register</h1>
         </div>
-        <form role="form" action="/register" method="post" name="form">
+        <form role="form" class="form" ng-submit="register()">
             <div class="form-group register-form">
                 <label>Username</label>
-                <input class="form-control" type="text" ng-model="user.username" name="username" id="username" />
+                <input class="form-control" type="text" ng-model="registerForm.username" name="username" id="username" required/>
                 <br />
                 <label>Password</label>
-                <input class="form-control" type="password" ng-model="user.password" name="password" id="password" />
+                <input class="form-control" type="password" ng-model="registerForm.password" name="password" id="password" required/>
                 <br />
-                <input type="submit" ng-click="" class="btn btn-lg btn-primary"/>
+                <input type="submit" class="btn btn-lg btn-primary"/>
             </div>
         </form>
     </div>
