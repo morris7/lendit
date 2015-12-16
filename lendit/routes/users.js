@@ -55,7 +55,7 @@ module.exports = function(app) {
   });
 
 
-  app.get('/logout', function (req, res) {
+  app.post('/user/logout', function (req, res) {
     req.logout();
     res.redirect('/');
   });

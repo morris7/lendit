@@ -2,8 +2,8 @@
  * Created by sam morris on 06/12/2015.
  */
 angular.module('app').controller('loginController',
-    ['$scope', '$location', 'AuthService',
-        function ($scope, $location, AuthService) {
+    ['$scope', '$location', 'AuthService','$rootScope',
+        function ($scope, $location, AuthService, $rootScope) {
 
             console.log(AuthService.getUserStatus(),$location.search().status);
             $scope.status = $location.search().status;
@@ -22,6 +22,7 @@ angular.module('app').controller('loginController',
                         $location.path('/');
                         $scope.disabled = false;
                         $scope.loginForm = {};
+                        //$rootScope.$broadcast('username-updated');
                     })
                     // handle error
                     .catch(function () {

@@ -18,12 +18,16 @@ app.controller('navController', ['$scope', '$http', 'AuthService', function($sco
     };*/
 
     $scope.getName = AuthService.getUserName();
-    $scope.getName.then(function(user){
-        $scope.username = user.username;
+
+    $scope.$on('username-updated', function(){
+        console.log('got it!');
+        $scope.getName.then(function(user){
+            $scope.username = user.username;
+        });
     });
-
-
-
+    /*$scope.getName.then(function(user){
+        $scope.username = user.username;
+    });*/
 
     //$scope.updateUsername();
 

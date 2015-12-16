@@ -3,17 +3,18 @@
  */
 
 angular.module('app').controller('logoutController',
-    ['$scope', '$location', 'AuthService',
-        function ($scope, $location, AuthService) {
+    ['$scope', '$location', 'AuthService', '$rootScope',
+        function ($scope, $location, AuthService, $rootScope) {
 
             $scope.logout = function () {
 
-                console.log(AuthService.getUserStatus());
+                //console.log(AuthService.getUserStatus());
 
                 // call logout from service
                 AuthService.logout()
                     .then(function () {
                         $location.path('/login');
+                        //$rootScope.$broadcast('username-updated');
                     });
 
             };

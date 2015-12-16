@@ -2,8 +2,8 @@
  * Created by sam morris on 06/12/2015.
  */
 angular.module('app').factory('AuthService',
-    ['$q', '$timeout', '$http',
-        function ($q, $timeout, $http) {
+    ['$q', '$timeout', '$http', '$rootScope',
+        function ($q, $timeout, $http, $rootScope) {
 
             // create user variable
             var user = null;
@@ -50,7 +50,7 @@ angular.module('app').factory('AuthService',
                         if(status === 200 && data.status){
                             user = true;
                             username = data.username;
-
+                            $rootScope.$broadcast('username-updated');
                             deferred.resolve();
                         } else {
                             user = false;
@@ -74,11 +74,12 @@ angular.module('app').factory('AuthService',
                 var deferred = $q.defer();
 
                 // send a get request to the server
-                $http.get('/logout')
+                $http.post('/user/logout')
                     // handle success
                     .success(function (data) {
                         user = false;
-                        deferred.resolve();
+                        $rootScope.$broadcast('username-updated');
+                        deferred.resolve(data);
                     })
                     // handle error
                     .error(function (data) {
