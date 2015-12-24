@@ -88,8 +88,7 @@ nav .navbar-brand {
 }
 #slides_control img{
   margin: auto;
-  width: 200px;
-  height: 200px;
+
 }
 #slides_control {
   width: 400px;
@@ -105,8 +104,11 @@ nav .navbar-brand {
 }
 
 #lendit .carousel-inner img {
-  height: 500px;
-  width: 100%;
+  max-width: 300px;
+}
+
+#lendit .carousel-inner {
+  border: 1px #ebebeb solid;
 }
 
 .lending-form textarea{
@@ -132,6 +134,34 @@ form.register{
 
 form.register .registerTopRow{
   margin-bottom: 5px;
+}
+
+p.product-description{
+  white-space: pre-wrap;
+}
+
+footer .footer-above {
+  font-size:12px;
+  background-color: #eee;
+  margin-top: 80px;
+  padding: 30px 0 30px 0;
+  color: #777;
+  text-align:left;
+}
+
+footer .footer-above a {
+  color: #999;
+}
+
+footer .footer-below {
+  background-color: #777;
+  color: #fff;
+  padding: 25px 0;
+  font-weight: 200;
+}
+
+#lendit div.borrow-items img{
+  border: none;
 }
 
 

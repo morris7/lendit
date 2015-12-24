@@ -1,9 +1,15 @@
-<div class="container">
+<div class="container borrow-items">
     <div class="page-header">
         <h1>Borrow</h1>
     </div>
     <div class="alert alert-info" role="alert">
         <strong>Nearby:</strong> These items are all in your area!
     </div>
-    <grid-item ng-repeat="item in items"></grid-item>
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control" type="text" name="search-items" ng-model="itemSearch" placeholder="Search items..."/>
+        </div>
+    </div>
+    <br />
+    <grid-item ng-repeat="item in items | filter:{name:itemSearch}" ng-if="item.paths.length"></grid-item>
 </div>

@@ -1,4 +1,4 @@
-app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, $http, Upload) {
+app.controller('lendController', ['$scope', '$http', 'Upload','$location', function($scope, $http, Upload, $location) {
 
     $scope.item = {
         name: '',
@@ -16,7 +16,8 @@ app.controller('lendController', ['$scope', '$http', 'Upload', function($scope, 
             .success(function(data) {
                 $scope.formReset(); // clear the form so our user is ready to enter another
                 //$scope.items = data;
-                console.log(data);
+                console.log('uploaded item: ', data);
+                $location.path( "/lend-success?id=" + data.pop()._id);
             })
             .error(function(data) {
                 console.log('Error: ' + data);

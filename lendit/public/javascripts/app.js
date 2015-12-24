@@ -29,7 +29,8 @@ app.config(function($locationProvider, $routeProvider) {
         .when('/borrow/:id', { templateUrl: 'partials/borrow-item.html', controller: 'borrowItemController' })
         .when('/login', { templateUrl: 'partials/login.html', controller: 'loginController'})
         .when('/logout', {controller: 'logoutController'})
-        .when('/register', { templateUrl: 'partials/register.html', controller: 'registerController'})
+        .when('/register', { templateUrl: 'partials/register    .html', controller: 'registerController'})
+        .when('/lend-success', { templateUrl: 'partials/lend-success.html'})
         .otherwise({redirectTo:'/'});
 });
 

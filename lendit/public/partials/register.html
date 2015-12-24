@@ -2,13 +2,21 @@
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
         <div class="page-header">
-            <h1>Register</h1>
+            <h1>Sign up</h1>
         </div>
-        <form role="form" class="form" ng-submit="register()">
+        <form role="form" class="form register" ng-submit="register()">
             <div class="form-group register-form">
-                <label>Username</label>
+                <div class="row registerTopRow">
+                    <div class="col-sm-6"><label>First name</label>
+                        <input class="form-control" type="text" ng-model="registerForm.firstname" name="firstname" id="firstname" required/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Surname</label>
+                        <input class="form-control" type="text" ng-model="registerForm.surname" name="surname" id="surname" required/>
+                    </div>
+                </div>
+                <label>Email</label>
                 <input class="form-control" type="text" ng-model="registerForm.username" name="username" id="username" required/>
-                <br />
                 <label>Password</label>
                 <input class="form-control" type="password" ng-model="registerForm.password" name="password" id="password" required/>
                 <br />
